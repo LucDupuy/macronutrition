@@ -1,0 +1,15 @@
+# Needed before any rewriting
+RewriteEngine On
+### Built using the .htaccess 301 Redirect Generator from Web Site Advantage 
+### https://websiteadvantage.com.au/HtAccess-301-Redirect-Generator Place after 'RewriteEngine On' and before 
+### any CMS specific rewrite rules
+# Redirect HTTP with www to HTTPS with www
+RewriteCond %{HTTPS} off RewriteCond %{HTTP_HOST} ^www. [NC] RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} 
+[R=301,L]
+# Redirect HTTP without www to HTTPS with www
+RewriteCond %{HTTPS} off RewriteCond %{HTTP_HOST} !^www. [NC] RewriteRule .* 
+https://www./%%7BHTTP_HOST%7D%%7BREQUEST_URI%7D [R=301,L]
+# Redirect HTTPS without www to HTTPS with www
+RewriteCond %{HTTPS} on RewriteCond %{HTTP_HOST} !^www. [NC] RewriteRule .* 
+https://www./%%7BHTTP_HOST%7D%%7BREQUEST_URI%7D [R=301,L]
+## 301 Redirects

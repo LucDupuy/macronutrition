@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-36W77B29GW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-36W77B29GW');
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!--Personal Font Awesome-->
+    <script src="https://kit.fontawesome.com/09ef12e1c4.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
+    <!--JSPDF-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <!--Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Basic Calculator</title>
+    <script src="index.js"></script>
+</head>
+
+<body>
+
+    <!--Menu Bar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand active-page" href="index.html">Basic</a>
+        <a class="navbar-brand" href="AdvancedCalculator.html">Advanced</a>
+    </nav>
+
+
+
+    <div id="main" class="main">
+        <h1 class="my-5" style="text-align:center">Basic Calorie and Macronutrient Calculator</h1>
+
+        <div class="container text-center">
+
+
+            <select style="font-size: 120%" class="browser-default custom-select" id="sex_id" required>
+                <option disabled selected>Sex:</option>
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+            </select>
+
+
+            <div class="input_basic" id="input_basic">
+                <div class="md-form input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span style="font-size: 120%" class="input-group-text md-addon" id="material-addon1">Age:</span>
+                    </div>
+                    <input type="number" min="0" max="120" class="form-control col-md-1" aria-describedby="material-addon1" id="age_id" placeholder="0">
+                </div>
+
+                <div class="md-form input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span style="font-size: 120%" class="input-group-text md-addon" id="material-addon1">Weight in
+                            kilograms:</span>
+                    </div>
+                    <input type="number" min="0" class="form-control col-md-1" aria-describedby="material-addon1" id="weight_id" placeholder="0">
+                </div>
+
+                <div class="md-form input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span style="font-size: 120%" class="input-group-text md-addon" id="material-addon1">Height in
+                            centimetres</span>
+                    </div>
+                    <input type="number" min="0" class="form-control col-md-1" aria-describedby="material-addon1" id="height_id" placeholder="0">
+                </div>
+            </div>
+
+
+            <select style="font-size: 120%" class="browser-default custom-select" id="goal_id">
+                <option disabled selected>Select your goal (in a week):</option>
+                <option value="1">Lose Weight (0.5 lbs)</option>
+                <option value="2">Lose Weight (1.0 lbs)</option>
+                <option value="3">Lose Weight (1.5 lbs)</option>
+                <option value="4">Lose Weight (2.0 lbs)</option>
+                <option value="5">Maintain Weight</option>
+                <option value="6">Gain Weight (0.5 lbs)</option>
+                <option value="7">Gain Weight (1.0 lbs)</option>
+                <option value="8">Gain Weight (1.5 lbs)</option>
+                <option value="9">Gain Weight (2.0 lbs)</option>
+            </select>
+
+            <select style="font-size: 120%" class="browser-default custom-select my-4" id="activity_id">
+                <option disabled selected>Select your level of daily typical activity:</option>
+                <option value="1">Sedentary</option>
+                <option value="2">Light</option>
+                <option value="3">Moderate</option>
+            </select>
+
+            <div id="main_btns">
+                <button type="button" id="submit_basic" class="btn btn-primary mx-auto">Submit</button>
+            </div>
+
+
+            <div id="pdf_target">
+                <div style=" display:none; text-align: center; background-color: #eff0f0" class="boxed container center" id="box">
+                    <div style="display: inline-block; text-align: left;" id="results">
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="container text-center" id="save_btn_div" style="display:none">
+                <button type="button" id="save_btn" class="btn btn-primary mx-auto">Download PDF</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Footer-->
+    <div id="footer" class="footer">
+        <footer>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <a href="https://www.instagram.com/thedieteticdiaries/" target="_blank"><i class="fab fa-instagram"
+                            alt="instagram link"></i></a>
+                    <a href="https://www.linkedin.com/in/luc-dupuy-483179130/" target="_blank"><i
+                            class="fab fa-linkedin" alt="linkedin link"></i></a>
+                </div>
+                <div class="col-md-4">
+                    <p class="text-light copyright">Copyright © Luc Dupuy 2021</p>
+                </div>
+                <div class="col-md-4 misc_btns">
+                    <a href='Contact.html'>Contact Us</a>
+                    <div>
+                        <a href='MoreInfo.html'>More Info</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>

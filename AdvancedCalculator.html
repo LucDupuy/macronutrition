@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-36W77B29GW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-36W77B29GW');
+    </script>
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!--Personal Font Awesome-->
+    <script src="https://kit.fontawesome.com/09ef12e1c4.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
+    <!--JSPDF-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <!--Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Advanced Calculator</title>
+    <script src="index.js"></script>
+</head>
+
+<body>
+
+    <!--Menu Bar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Basic</a>
+        <a class="navbar-brand active-page" href="AdvancedCalculator.html">Advanced</a>
+    </nav>
+
+
+    <div id="main" class="main">
+        <h1 class="my-5" style="text-align:center">Advanced Calorie and Macronutrient Calculator</h1>
+
+        <div class="container text-center">
+
+
+            <select style="font-size: 120%" class="browser-default custom-select" id="sex_id_pro">
+                <option disabled selected>Sex:</option>
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+            </select>
+
+
+            <div class="input_pro" id="input_pro">
+                <div class="md-form input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span style="font-size: 120%" class="input-group-text md-addon" id="material-addon1">Age:</span>
+                    </div>
+                    <input type="number" min="0" max="120" class="form-control col-md-1" aria-describedby="material-addon1" id="age_id_pro" placeholder="0">
+                </div>
+
+                <div class="md-form input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span style="font-size: 120%" class="input-group-text md-addon" id="material-addon1">Weight in
+                            kilograms:</span>
+                    </div>
+                    <input type="number" min="0" class="form-control col-md-1" aria-describedby="material-addon1" id="weight_id_pro" placeholder="0">
+                </div>
+
+                <div class="md-form input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span style="font-size: 120%" class="input-group-text md-addon" id="material-addon1">Height in
+                            centimetres</span>
+                    </div>
+                    <input type="number" min="0" class="form-control col-md-1" aria-describedby="material-addon1" id="height_id_pro" placeholder="0">
+                </div>
+            </div>
+
+
+            <select style="font-size: 120%" class="browser-default custom-select" id="goal_id_pro">
+                <option disabled selected>Select your goal (in a week):</option>
+                <option value="1">Lose Weight (0.5 lbs)</option>
+                <option value="2">Lose Weight (1.0 lbs)</option>
+                <option value="3">Lose Weight (1.5 lbs)</option>
+                <option value="4">Lose Weight (2.0 lbs)</option>
+                <option value="5">Maintain Weight</option>
+                <option value="6">Gain Weight (0.5 lbs)</option>
+                <option value="7">Gain Weight (1.0 lbs)</option>
+                <option value="8">Gain Weight (1.5 lbs)</option>
+                <option value="9">Gain Weight (2.0 lbs)</option>
+            </select>
+
+            <select style="font-size: 120%" class="browser-default custom-select my-4" id="activity_drop_pro">
+                <option disabled selected>Select your level of daily typical activity:</option>
+                <option value="1">Resting (1.0-1.4)</option>
+                <option value="2">Asleep/Sedated (0.9-1.1)</option>
+                <option value="3">Lying Still (1.0-1.1)</option>
+                <option value="4">Spinal cord injury (1.1)</option>
+                <option value="5">Bedrest (1.15-1.2)</option>
+                <option value="6">Mobilizing Occasionally (1.15-1.4)</option>
+                <option value="7">Sedentary/Light Activity (1.4-1.6)</option>
+                <option value="8">Mobilizing Frequently (1.4-1.5)</option>
+                <option value="9">Regular Physiotherapy (1.5-1.6)</option>
+                <option value="10">Moderate Activity (1.6-1.8)</option>
+            </select>
+
+            <select style="font-size: 120%" class="browser-default custom-select my-1" id="stress_drop_pro">
+                <option disabled selected>Select your stress factor:</option>
+                <option value="1">No Stress (1.0)</option>
+                <option value="2">Elective Surgery (1.0-1.1)</option>
+                <option value="3">Peritonitis (1.05-1.25)</option>
+                <option value="4">Multiple Bone Fractures (1.1-1.3)</option>
+                <option value="5">Fever (1.2 per 1&#8451 > 37&#8451)</option>
+                <option value="6">Spinal Cord Injury (1.2)</option>
+                <option value="7">Sepsis (1.2-1.4)</option>
+                <option value="8">Severe Infection (1.2-1.6)</option>
+                <option value="9">Burns (1.2-2.0)</option>
+                <option value="10">Infection with trauma (1.3-1.55)</option>
+                <option value="11">Multiple Trauma/Traumatic Brain Injury (1.4)</option>
+            </select>
+
+            <div class="md-form input-group">
+                <div class="input-group-prepend">
+                    <span style="font-size: 120%" class="input-group-text md-addon">Enter a value for activity
+                        level:</span>
+                </div>
+                <input type="number" min="1" class="form-control col-md-1" aria-label="Username" aria-describedby="material-addon1" id="activity_id_pro" placeholder="0">
+            </div>
+
+            <div class="md-form input-group">
+                <div class="input-group-prepend">
+                    <span style="font-size: 120%" class="input-group-text md-addon">Enter a value for stress
+                        level:</span>
+                </div>
+                <input type="number" min="1" class="form-control col-md-1" aria-label="Username" aria-describedby="material-addon1" id="stress_id_pro" placeholder="0">
+            </div>
+
+
+
+            <div id="main_btns">
+                <button type="button" id="submit_pro" class="btn btn-primary mx-auto">Submit</button>
+                <p><br></p>
+            </div>
+
+
+
+            <div style=" display:none; text-align: center; background-color: #eff0f0" class="boxed container center" id="box_pro">
+                <div style="display: inline-block; text-align: left;" id="results_pro"><br>
+                </div>
+            </div>
+
+
+            <div class="container text-center" id="save_btn_div_pro" style="display:none">
+                <button type="button" id="save_btn_pro" class="btn btn-primary mx-auto">Download PDF</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Footer-->
+    <div id="footer" class="footer">
+        <footer>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <a href="https://www.instagram.com/thedieteticdiaries/" target="_blank"><i class="fab fa-instagram"
+                            alt="instagram link"></i></a>
+                    <a href="https://www.linkedin.com/in/luc-dupuy-483179130/" target="_blank"><i
+                            class="fab fa-linkedin" alt="linkedin link"></i></a>
+                </div>
+                <div class="col-md-4">
+                    <p class="text-light copyright">Copyright © Luc Dupuy 2021</p>
+                </div>
+                <div class="col-md-4 misc_btns">
+                    <a href='Contact.html'>Contact Us</a>
+                    <div>
+                        <a href='MoreInfo.html'>More Info</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>

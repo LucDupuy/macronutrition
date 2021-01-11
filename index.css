@@ -1,0 +1,90 @@
+.main {
+    position: relative;
+    padding-top: 30px;
+    min-height: 75vh;
+}
+
+@media (max-width:1920px) {
+    .footer {
+        background-color: #444;
+        padding: 35px;
+        font-size: 20px;
+    }
+}
+
+@media (min-width:2560px) {
+    .footer {
+        background-color: #444;
+        padding: 40px;
+        font-size: 20px;
+    }
+}
+
+.footer i {
+    color: #FFFFFF;
+    font-size: 40px;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+
+#readme_main {
+    font-size: 20px;
+    padding-left: 10px;
+    min-height: 80vh;
+}
+
+#buttons {
+    width: 100%;
+    position: absolute;
+    bottom: 100px;
+}
+
+#contact_table {
+    font-size: 20px;
+}
+
+#input_basic input {
+    margin-left: 15em;
+}
+
+#input_basic span {
+    position: absolute;
+}
+
+#input_pro input {
+    margin-left: 15em;
+}
+
+#input_pro span {
+    position: absolute;
+}
+
+#stress_id_pro {
+    margin-left: 1ex;
+}
+
+.copyright {
+    padding-top: 30px;
+}
+
+.misc_btns {
+    padding-top: 10px;
+}
+
+#navbarSupportedContent a.active-page {
+    background-color: #c2c2c2;
+}
+
+.navbar {
+    min-height: 78px;
+}
+
+.boxed {
+    border: 1px solid #000;
+    width: 90ex;
+}
+
+#box_pro {
+    border: 1px solid #000;
+    width: 90ex;
+}
