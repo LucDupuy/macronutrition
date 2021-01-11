@@ -59,12 +59,12 @@ function show_basic() {
 
     [BMI, goalCalories, protein, fats, carbs] = getDataBasic(sex, age, weight, height, goal, activity);
 
-    var goal_txt = "Your weight goal for this week is: " + goal + "\n";
-    var BMI_txt = "Your BMI is: " + BMI + " kg/m*m\n";
-    var cals_out = "You need to consume approximately " + Number(goalCalories) + " calories a day\n";
-    var protein_out = "You need approximately: " + protein + " grams of protein a day (20% of calories)\n";
-    var fat_out = "You need approximately: " + fats + " grams of fat a day (25% of calories)\n";
-    var carbs_out = "You need approximately: " + carbs + " grams of carbs a day (55% of calories)\n";
+    var goal_txt = "Your weight goal for this week is: <b>" + goal + "</b>\n";
+    var BMI_txt = "Your <b>BMI</b> is: " + BMI + " kg/m*m\n";
+    var cals_out = "You need to consume approximately <b>" + Number(goalCalories) + " calories a day\n<br>";
+    var protein_out = "You need approximately: <b>" + protein + " grams of protein</b> a day (20% of calories)\n<br>";
+    var fat_out = "You need approximately: <b>" + fats + " grams of fat</b> a day (25% of calories)\n<br>";
+    var carbs_out = "You need approximately: <b>" + carbs + " grams of carbs</b> a day (55% of calories)\n<br>";
     var arr_txt_out = [goal_txt, BMI_txt, cals_out, protein_out, fat_out, carbs_out];
 
 
@@ -139,14 +139,14 @@ function show_pro() {
     [BMI, REE, TEE, goalCalories, protein_min, protein_max, fats_min, fats_max, carbs_min, carbs_max] = getDataPro(sex, age, weight, height, goal, activity, SF);
 
 
-    var goal_txt = "Your weight goal for this week is: " + goal + "\n";
-    var REE_txt = "Your REE is: " + REE + " kcals\n";
-    var TEE_txt = "Your TEE is: " + TEE + " kcals/day\n";
-    var BMI_txt = "Your BMI is: " + BMI + "kg/m*m\n";
-    var cals_out = "You need to consume approximately " + Number(goalCalories) + " calories a day\n";
-    var protein_out = "You need (approximately) between : " + protein_min + " and " + protein_max + " grams of protein a day (10-35% of calories)\n";
-    var fat_out = "You need (approximately) between : " + fats_min + " and " + fats_max + " grams of fat a day (20-35% of calories)\n";
-    var carbs_out = "You need (approximately) between : " + carbs_min + " and " + carbs_max + " grams of carbs a day (45-65% of calories)\n";
+    var goal_txt = "Your weight goal for this week is: <b>" + goal + "</b>\n";
+    var REE_txt = "Your <b>REE</b> is: " + REE + " kcals\n";
+    var TEE_txt = "Your <b>TEE</b> is: " + TEE + " kcals/day\n";
+    var BMI_txt = "Your <b>BMI</b> is: " + BMI + "kg/m*m\n";
+    var cals_out = "You need to consume approximately <b>" + Number(goalCalories) + " calories</b> a day\n<br>";
+    var protein_out = "You need (approximately) between : <b>" + protein_min + " and " + protein_max + " grams of protein</b> a day (10-35% of calories)\n<br>";
+    var fat_out = "You need (approximately) between : <b>" + fats_min + " and " + fats_max + " grams of fat</b> a day (20-35% of calories)\n<br>";
+    var carbs_out = "You need (approximately) between : <b>" + carbs_min + " and " + carbs_max + " grams of carbs</b> a day (45-65% of calories)\n<br>";
     var arr_txt_out = [goal_txt, REE_txt, TEE_txt, BMI_txt, cals_out, protein_out, fat_out, carbs_out];
 
 
@@ -161,7 +161,7 @@ function show_pro() {
     $("#results_pro").append(protein_out + "<br>");
     $("#results_pro").append(fat_out + "<br>");
     $("#results_pro").append(carbs_out);
-    $("#results_pro").append("<br><br> *Note, these values are all approximations based off of the Harris-Benedict Equation and the Acceptable Macronutrient Distribution Range.<br>");
+    $("#results_pro").append("<br><br><br> *Note, these values are all approximations based off of the Harris-Benedict Equation and the Acceptable Macronutrient Distribution Range.<br>");
     $("#results_pro").append("<br><b>REE</b> (or Resting Energy Expenditure), is the amount of calories one expends while at rest.<br>");
     $("#results_pro").append("<br><b>TEE</b> (or Total Energy Expenditure), is the amount of calories burned when taking exercise into account.");
     $("#results_pro").append("<br><br><b>BMI</b> (or Body Mass Index), BMI is one way to calculate if someone's weight is within the healthy range for their height, although it has significant limitations. \nFor example, it does not factor in how much of someone's weight is fat vs. muscle.");
